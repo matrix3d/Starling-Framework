@@ -270,7 +270,7 @@ package starling.core
             mStage = new Stage(viewPort.width, viewPort.height, stage.color);
             mNativeOverlay = new Sprite();
             mNativeStage = stage;
-            mNativeStage.addChild(mNativeOverlay);
+            //mNativeStage.addChild(mNativeOverlay);
             mNativeStageContentScaleFactor = 1.0;
             mTouchProcessor = new TouchProcessor(mStage);
             mJuggler = new Juggler();
@@ -338,7 +338,7 @@ package starling.core
             mNativeStage.removeEventListener(KeyboardEvent.KEY_UP, onKey, false);
             mNativeStage.removeEventListener(Event.RESIZE, onResize, false);
             mNativeStage.removeEventListener(Event.MOUSE_LEAVE, onMouseLeave, false);
-            mNativeStage.removeChild(mNativeOverlay);
+            //mNativeStage.removeChild(mNativeOverlay);
             
             mStage3D.removeEventListener(Event.CONTEXT3D_CREATE, onContextCreated, false);
             mStage3D.removeEventListener(ErrorEvent.ERROR, onStage3DError, false);
@@ -384,7 +384,7 @@ package starling.core
             
             function requestNextProfile():void
             {
-                currentProfile = profiles.shift();
+                currentProfile = profiles.shift() as String;
 
                 try { execute(mStage3D.requestContext3D, renderMode, currentProfile); }
                 catch (error:Error)

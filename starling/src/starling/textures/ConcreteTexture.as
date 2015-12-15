@@ -18,7 +18,7 @@ package starling.textures
     import flash.geom.Point;
     import flash.geom.Rectangle;
     import flash.media.Camera;
-    import flash.net.NetStream;
+   // import flash.net.NetStream;
     import flash.utils.ByteArray;
     import flash.utils.getQualifiedClassName;
 
@@ -180,10 +180,10 @@ package starling.textures
             mDataUploaded = true;
         }
 
-        public function attachNetStream(netStream:NetStream, onComplete:Function=null):void
+        /*public function attachNetStream(netStream:NetStream, onComplete:Function=null):void
         {
             attachVideo("NetStream", netStream, onComplete);
-        }
+        }*/
 
         public function attachCamera(camera:Camera, onComplete:Function=null):void
         {

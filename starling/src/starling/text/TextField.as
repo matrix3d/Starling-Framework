@@ -263,19 +263,20 @@ package starling.text
 
         private function renderText(scale:Number, resultTextBounds:Rectangle):BitmapData
         {
-            var width:Number  = mHitArea.width  * scale;
+			return null;
+            /*var width:Number  = mHitArea.width  * scale;
             var height:Number = mHitArea.height * scale;
             var hAlign:String = mHAlign;
             var vAlign:String = mVAlign;
             
             if (isHorizontalAutoSize)
             {
-                width = int.MAX_VALUE;
+                width = Number.MAX_VALUE;
                 hAlign = HAlign.LEFT;
             }
             if (isVerticalAutoSize)
             {
-                height = int.MAX_VALUE;
+                height = Number.MAX_VALUE;
                 vAlign = VAlign.TOP;
             }
 
@@ -355,7 +356,7 @@ package starling.text
                                    (textOffsetY + filterOffset.y) / scale,
                                    textWidth / scale, textHeight / scale);
             
-            return bitmapData;
+            return bitmapData;*/
         }
         
         private function autoScaleNativeTextField(textField:flash.text.TextField):void
@@ -450,12 +451,12 @@ package starling.text
             
             if (isHorizontalAutoSize)
             {
-                width = int.MAX_VALUE;
+                width = Number.MAX_VALUE;
                 hAlign = HAlign.LEFT;
             }
             if (isVerticalAutoSize)
             {
-                height = int.MAX_VALUE;
+                height = Number.MAX_VALUE;
                 vAlign = VAlign.TOP;
             }
             

@@ -134,7 +134,7 @@ package starling.text
             
             for each (var charElement:XML in fontXml.chars.char)
             {
-                var id:int = parseInt(charElement.@id);
+                var id:int = parseInt(charElement.@id,10);
                 var xOffset:Number  = parseFloat(charElement.@xoffset)  / scale;
                 var yOffset:Number  = parseFloat(charElement.@yoffset)  / scale;
                 var xAdvance:Number = parseFloat(charElement.@xadvance) / scale;
@@ -152,8 +152,8 @@ package starling.text
             
             for each (var kerningElement:XML in fontXml.kernings.kerning)
             {
-                var first:int  = parseInt(kerningElement.@first);
-                var second:int = parseInt(kerningElement.@second);
+                var first:int  = parseInt(kerningElement.@first,10);
+                var second:int = parseInt(kerningElement.@second,10);
                 var amount:Number = parseFloat(kerningElement.@amount) / scale;
                 if (second in mChars) getChar(second).addKerning(first, amount);
             }
@@ -488,7 +488,7 @@ class CharLocation
     public static function vectorFromPool():Vector.<CharLocation>
     {
         var vector:Vector.<CharLocation> = sVectorPool.length > 0 ?
-            sVectorPool.pop() : new <CharLocation>[];
+            (sVectorPool.pop() as Vector.<CharLocation>): new <CharLocation>[];
 
         vector.length = 0;
         sVectorLoan[sVectorLoan.length] = vector;
@@ -510,7 +510,7 @@ class CharLocation
 
         while (sVectorLoan.length > 0)
         {
-            vector = sVectorLoan.pop();
+            vector = sVectorLoan.pop() as Vector.<CharLocation>;
             vector.length = 0;
             sVectorPool[sVectorPool.length] = vector;
         }

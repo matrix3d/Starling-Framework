@@ -142,7 +142,7 @@ package starling.utils
          *  and this property indicates if that's the case in the current runtime. */
         public static function get supportsRelaxedTargetClearRequirement():Boolean
         {
-            return parseInt(/\d+/.exec(sVersion)[0]) >= 15;
+            return parseInt(/\d+/.exec(sVersion)[0],10) >= 15;
         }
 
         /** Returns the value of the 'initialWindow.depthAndStencil' node of the application

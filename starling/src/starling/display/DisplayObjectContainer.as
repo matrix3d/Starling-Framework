@@ -465,7 +465,7 @@ package starling.display
         /** Custom implementation of 'Vector.splice'. The native method always create temporary
          *  objects that have to be garbage collected. This implementation does not cause such
          *  issues. */
-        private function spliceChildren(startIndex:int, deleteCount:uint=uint.MAX_VALUE,
+        private function spliceChildren(startIndex:int, deleteCount:uint=1000000,
                                         insertee:DisplayObject=null):void
         {
             var vector:Vector.<DisplayObject> = mChildren;

@@ -87,7 +87,7 @@ package starling.events
             shape.graphics.endFill();
             
             var bmpData:BitmapData = new BitmapData(width, height, true, 0x0);
-            bmpData.draw(shape);
+            //bmpData.draw(shape);
             
             return Texture.fromBitmapData(bmpData, false, false, scale);
         }

@@ -17,7 +17,7 @@ package starling.textures
     import flash.display3D.textures.TextureBase;
     import flash.geom.Rectangle;
     import flash.media.Camera;
-    import flash.net.NetStream;
+   // import flash.net.NetStream;
     import flash.system.Capabilities;
     import flash.utils.ByteArray;
     import flash.utils.getQualifiedClassName;
@@ -331,7 +331,7 @@ package starling.textures
          *  @param onComplete will be executed when the texture is ready. Contains a parameter
          *                 of type 'Texture'.
          */
-        public static function fromNetStream(stream:NetStream, scale:Number=1,
+        /*public static function fromNetStream(stream:NetStream, scale:Number=1,
                                              onComplete:Function=null):Texture
         {
             // workaround for bug in NetStream class:
@@ -339,7 +339,7 @@ package starling.textures
                 stream.client = { onMetaData: function(md:Object):void {} };
 
             return fromVideoAttachment("NetStream", stream, scale, onComplete);
-        }
+        }*/
 
         /** Creates a video texture from a camera. Beware that the texture must not be used
          *  before the 'onComplete' callback has been executed; until then, it will have a size
@@ -369,7 +369,7 @@ package starling.textures
         private static function fromVideoAttachment(type:String, attachment:Object,
                                                     scale:Number, onComplete:Function):Texture
         {
-            const TEXTURE_READY:String = "textureReady"; // for backwards compatibility
+            /*var TEXTURE_READY:String = "textureReady"; // for backwards compatibility
 
             if (!SystemUtil.supportsVideoTexture)
                 throw new NotSupportedError("Video Textures are not supported on this platform");
@@ -391,7 +391,8 @@ package starling.textures
                 texture.root.attachVideo(type, attachment);
             };
 
-            return texture;
+            return texture;*/
+			return null;
         }
 
         /** Creates a texture with a certain size and color.

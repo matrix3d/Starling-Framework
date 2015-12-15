@@ -169,7 +169,7 @@ package starling.events
             var element:DisplayObject = this as DisplayObject;
             var length:int = 1;
             
-            if (sBubbleChains.length > 0) { chain = sBubbleChains.pop(); chain[0] = element; }
+            if (sBubbleChains.length > 0) { chain = (sBubbleChains.pop() as Vector.<EventDispatcher>); chain[0] = element; }
             else chain = new <EventDispatcher>[element];
             
             while ((element = element.parent) != null)
